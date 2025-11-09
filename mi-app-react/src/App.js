@@ -29,39 +29,45 @@ function App() {
   return (
     <div className="App">
       <Container maxWidth="lg" className="main-container">
-        {/* Título */}
         <Typography 
           variant="h3" 
-          component="h1" 
+          component="h2" 
           className="main-title"
           gutterBottom
         >
-          🗺️ Mapa de calor de inversiones en las comunas
+          Índice de Pulso Urbano
         </Typography>
+        <div>
+          <Typography 
+            variant="p" 
+            component="h4" 
+            className="text"
+          >
+            El Índice Urbano (IPU) analiza la relación entre inversión inmobiliaria y volatilidad de precios en las comunas de la Ciudad de Buenos Aires. Permite identificar asimetrías territoriales y el desplazamiento del capital, aportando una visión integral sobre la dinámica y distribución de la inversión en el mercado urbano porteño.
+          </Typography>
+          <Paper elevation={6} className="image-container">
+            <Card className="image-card">
+              <CardMedia
+                component="img"
+                image={`/caba${selectedYear}.png`}
+                alt={`Mapa de calor ${selectedYear}`}
+                className="heat-map-image"
+                onError={(e) => {
+                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlbiBubyBlbmNvbnRyYWRhPC90ZXh0Pjwvc3ZnPg==';
+                }}
+              />
+            </Card>
+          </Paper>
+        </div>
 
-        {/* Contenedor de la imagen */}
-        <Paper elevation={6} className="image-container">
-          <Card className="image-card">
-            <CardMedia
-              component="img"
-              image={`/caba${selectedYear}.png`}
-              alt={`Mapa de calor ${selectedYear}`}
-              className="heat-map-image"
-              onError={(e) => {
-                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlbiBubyBlbmNvbnRyYWRhPC90ZXh0Pjwvc3ZnPg==';
-              }}
-            />
-          </Card>
-        </Paper>
-
-        {/* Año seleccionado */}
+        {/* Año seleccionado
         <Typography 
           variant="h5" 
           className="year-display"
           color="primary"
         >
           Año: {selectedYear}
-        </Typography>
+        </Typography> */}
 
         {/* Slider para seleccionar año */}
         <Box className="slider-container">

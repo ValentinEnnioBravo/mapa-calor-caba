@@ -11,7 +11,6 @@ import {
   Grow
 } from '@mui/material';
 import './App.css';
-import { ViewCarousel } from '@mui/icons-material';
 
 function App() {
   const [selectedYear, setSelectedYear] = useState(2019);
